@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { extractStreamAnswers } from '../../utils/extract-stream-answers'
+import { extractStreamAnswers } from '@/utils/extract-stream-answers'
 
 const StreamDataSplicer = () => {
   const [content, setContent] = useState('data: {"answer": "hello"}\n\ndata: {"answer": " world"}\n\ndata: {"answer": "!"}')

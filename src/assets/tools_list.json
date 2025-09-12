@@ -2,13 +2,16 @@
     {
         "name": "Random Strong Password Generator",
         "description": "A tool to generate random strong passwords based on user-defined criteria.",
-        "url": "/password-generator",
-        "icon": null
+        "url": "/password-generator"
     },
     {
         "name": "Stream Data Splicer",
         "description": "A tool to extract AI streaming interface and concatenate the returned results.",
-        "url": "/stream-data-splicer",
-        "icon": null
+        "url": "/stream-data-splicer"
+    },
+    {
+        "name": "Word Capitalization Conversion",
+        "description": "A tool to convert the capitalization of words in a text.",
+        "url": "/word-capitalization-conversion"
     }
 ]
