@@ -76,7 +76,7 @@ const PasswordGenerator = () => {
   }
 
   return (
-    <div className='max-w-lg mx-auto mt-8 font-sans'>
+    <div className='max-w-lg mx-auto font-sans'>
       <div className='bg-white rounded-xl p-8 shadow-lg border border-gray-200'>
         <div className='mb-8'>
           <h3 className='text-gray-700 mb-4 text-base font-medium'>字符类型</h3>
