@@ -1,25 +1,37 @@
 ---
 import '@/styles/global.css'
 import data from '@/assets/tools_list.json?raw'
+import { stringToColor } from '../utils/hsl-color'
 
 const tools = JSON.parse(data)
 ---
 
 <div class='text-center h-6'>Ejeah Tools</div>
-<div class='waterfall p-6 pt-0 gap-6'>
-  {
-    tools.map((item: any) => {
-      return (
-        <div class='item cursor-pointer duration-300 ease-in-out hover:scale-105'>
-          <div class='content'>
-            <div>{item.name}</div>
-            <div>{item.description}</div>
-          </div>
-        </div>
-      )
-    })
-  }
-</div>
+<main class='select-none'>
+  <div class='waterfall p-6 pt-0 gap-6'>
+    {
+      Array.from({ length: 100 }, () => tools)
+        .flat()
+        .map((item: any) => {
+          return (
+            <div
+              class='item cursor-pointer duration-300 ease-in-out hover:scale-105'
+              style={{ backgroundColor: stringToColor(item.name) }}
+            >
+              <a href={item.url}>
+                <div class='content px-3'>
+                  <div class='text-[#402020] text-lg font-bold'>
+                    {item.name}
+                  </div>
+                  <div class='text-[#402626]'>{item.description}</div>
+                </div>
+              </a>
+            </div>
+          )
+        })
+    }
+  </div>
+</main>
 
 <style>
   .waterfall {
