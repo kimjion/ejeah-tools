@@ -1,0 +1,73 @@
+---
+import ToolLayout from '@/layouts/ToolLayout.astro'
+import toolsList from '@/assets/tools_list.json'
+import PasswordGeneratorComponent from '@/components/password-generator'
+import StreamDataSplicerComponent from '@/components/stream-data-splicer'
+import WordCapitalizationComponent from '@/components/word-capitalization-conversion'
+
+export async function getStaticPaths() {
+  return toolsList.map((tool) => ({
+    params: { slug: tool.url.replace('/', '') },
+  }))
+}
+
+const { slug } = Astro.params
+
+// 根据 slug 获取工具信息
+const tool = toolsList.find((t) => t.url === `/${slug}`)
+
+if (!tool) {
+  return Astro.redirect('/404')
+}
+
+// 验证 slug 是否有效
+const validSlugs = [
+  'password-generator',
+  'stream-data-splicer',
+  'word-capitalization-conversion',
+]
+if (!validSlugs.includes(slug)) {
+  return Astro.redirect('/404')
+}
+
+// SEO meta 信息
+const seoTitle = `${tool.name} - Ejeah Tools`
+const seoDescription = tool.description
+const canonicalURL = Astro.site
+  ? new URL(Astro.url.pathname, Astro.site)
+  : Astro.url
+---
+
+<ToolLayout>
+  <Fragment slot='head'>
+    <title>{seoTitle}</title>
+    <meta name='description' content={seoDescription} />
+    <meta
+      name='keywords'
+      content={`${tool.name}, tool, utility, ${slug.replace('-', ' ')}`}
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content={canonicalURL} />
+    <meta property='og:title' content={seoTitle} />
+    <meta property='og:description' content={seoDescription} />
+
+    <!-- Twitter -->
+    <meta property='twitter:card' content='summary' />
+    <meta property='twitter:url' content={canonicalURL} />
+    <meta property='twitter:title' content={seoTitle} />
+    <meta property='twitter:description' content={seoDescription} />
+
+    <!-- Canonical URL -->
+    <link rel='canonical' href={canonicalURL} />
+  </Fragment>
+
+  {slug === 'password-generator' && <PasswordGeneratorComponent client:load />}
+  {slug === 'stream-data-splicer' && <StreamDataSplicerComponent client:load />}
+  {
+    slug === 'word-capitalization-conversion' && (
+      <WordCapitalizationComponent client:load />
+    )
+  }
+</ToolLayout>
