@@ -13,5 +13,10 @@
         "name": "Word Capitalization Conversion",
         "description": "A tool to convert the capitalization of words in a text.",
         "url": "/word-capitalization-conversion"
+    },
+    {
+        "name": "各国货币符号",
+        "description": "一个显示各国货币符号的工具。",
+        "url": "/currency-symbols"
     }
 ]

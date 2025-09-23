@@ -4,6 +4,7 @@ import toolsList from '@/assets/tools_list.json'
 import PasswordGeneratorComponent from '@/components/password-generator'
 import StreamDataSplicerComponent from '@/components/stream-data-splicer'
 import WordCapitalizationComponent from '@/components/word-capitalization-conversion'
+import CurrencySymbolsComponent from '@/components/currency-symbols'
 
 export async function getStaticPaths() {
   return toolsList.map((tool) => ({
@@ -25,6 +26,7 @@ const validSlugs = [
   'password-generator',
   'stream-data-splicer',
   'word-capitalization-conversion',
+  'currency-symbols'
 ]
 if (!validSlugs.includes(slug)) {
   return Astro.redirect('/404')
@@ -69,5 +71,8 @@ const canonicalURL = Astro.site
     slug === 'word-capitalization-conversion' && (
       <WordCapitalizationComponent client:load />
     )
+  }
+  {
+    slug === 'currency-symbols' && <CurrencySymbolsComponent client:load />
   }
 </ToolLayout>
