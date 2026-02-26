@@ -15,8 +15,8 @@
         "url": "/word-capitalization-conversion"
     },
     {
-        "name": "各国货币符号",
-        "description": "一个显示各国货币符号的工具。",
+        "name": "Currency symbols of various countries",
+        "description": "A tool that displays currency symbols of various countries.",
         "url": "/currency-symbols"
     }
 ]
