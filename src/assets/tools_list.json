@@ -18,5 +18,10 @@
         "name": "Currency symbols of various countries",
         "description": "A tool that displays currency symbols of various countries.",
         "url": "/currency-symbols"
+    },
+    {
+        "name": "Become Master Image Generator",
+        "description": "Generate personalized images with 'I will become _ master' text overlay.",
+        "url": "/become-master-image-generator"
     }
 ]
