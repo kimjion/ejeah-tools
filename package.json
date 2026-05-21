@@ -2,6 +2,18 @@
   "name": "ejeah-tools",
   "type": "module",
   "version": "0.0.1",
+  "description": "A collection of lightweight utility tools built with Astro and React.",
+  "author": "Kim Jion",
+  "license": "MIT",
+  "keywords": ["astro", "react", "tailwindcss", "utility-tools", "password-generator"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimjion/ejeah-tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kimjion/ejeah-tools/issues"
+  },
+  "homepage": "https://github.com/kimjion/ejeah-tools#readme",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
