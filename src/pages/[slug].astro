@@ -6,6 +6,7 @@ import StreamDataSplicerComponent from '@/components/stream-data-splicer'
 import WordCapitalizationComponent from '@/components/word-capitalization-conversion'
 import CurrencySymbolsComponent from '@/components/currency-symbols'
 import BecomeMasterImageGeneratorComponent from '@/components/become-master-image-generator'
+import TimestampConverterComponent from '@/components/timestamp-converter'
 
 export async function getStaticPaths() {
   return toolsList.map((tool) => ({
@@ -28,7 +29,8 @@ const validSlugs = [
   'stream-data-splicer',
   'word-capitalization-conversion',
   'currency-symbols',
-  'become-master-image-generator'
+  'become-master-image-generator',
+  'timestamp-converter'
 ]
 if (!validSlugs.includes(slug)) {
   return Astro.redirect('/404')
@@ -79,5 +81,8 @@ const canonicalURL = Astro.site
   }
   {
     slug === 'become-master-image-generator' && <BecomeMasterImageGeneratorComponent client:load />
+  }
+  {
+    slug === 'timestamp-converter' && <TimestampConverterComponent client:load />
   }
 </ToolLayout>

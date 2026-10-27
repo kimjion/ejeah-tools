@@ -23,5 +23,10 @@
         "name": "Become Master Image Generator",
         "description": "Generate personalized images with 'I will become _ master' text overlay.",
         "url": "/become-master-image-generator"
+    },
+    {
+        "name": "Timestamp Converter",
+        "description": "A tool to convert between timestamps and human-readable dates.",
+        "url": "/timestamp-converter"
     }
 ]
